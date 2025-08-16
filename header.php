@@ -11,21 +11,32 @@
 <header class="bg-white">
   <div class="max-w-screen-lg mx-auto flex justify-between items-center py-1">
     <div class="flex items-center space-x-6">
-      <div class="logo">
+      <div class="logo flex">
         <?php 
         if(function_exists("the_custom_logo")){
           the_custom_logo();
         }
         ?>
       </div>
-
+        
+    <div>
       <?php wp_nav_menu([
-          "theme_location"=>'Header',
-          "menu_class"=>"flex gap-3",
-          "container"=>false
-        ]);
-      ?>
+          'theme_location' => 'menu-right',
+          'container' => false,
+          'menu_class' => 'flex gap-6',
+      ]);?>
+        
+  </div>
     </div>
+
+    <div>
+      <?php wp_nav_menu([
+          'theme_location' => 'menu-left',
+          'container' => false,
+          'menu_class' => 'flex gap-6',
+      ]);?>
+        
+  </div>
   </div>
 </header>
 
