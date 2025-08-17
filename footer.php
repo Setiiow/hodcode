@@ -3,7 +3,7 @@
   <div class="mb-6 w-[800px] mx-auto flex justify-between items-center mt-4">
 
     <div class="footer-logo">
-      <?php 
+      <?php
       if (function_exists('the_custom_logo')) {
         the_custom_logo();
       }
@@ -12,7 +12,9 @@
 
 
     <div class="footer-text text-center flex-grow">
-      <p class="text-gray-700"><p>©کلیه حقوق این سایت برای پارت محفوظ می باشد.</p></p>
+      <p class="text-gray-700">
+      <p>©کلیه حقوق این سایت برای پارت محفوظ می باشد.</p>
+      </p>
     </div>
 
 
@@ -33,4 +35,3 @@
 
   <?php wp_footer(); ?>
 </footer>
-
