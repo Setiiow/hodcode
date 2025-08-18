@@ -92,8 +92,17 @@
               </div>
               <div class="pt-2 mb-7">
                 <h2 class="font-bold text-gray-800 mb-4">ویژگی ها</h2>
-                <p>نوع حسگر: CMOS</p>
-                <p>قطع حسگر: APS-C / Crop Frame</p>
+                <?php
+                $sensorType = get_post_meta(get_the_ID(), 'sensor_type', true);
+                $sensorSize = get_post_meta(get_the_ID(), 'sensor_size', true);
+
+                if ($sensorType) {
+                  echo "<p>نوع حسگر: " . esc_html($sensorType) . "</p>";
+                }
+                if ($sensorSize) {
+                  echo "<p>قطع حسگر: " . esc_html($sensorSize) . "</p>";
+                }
+                ?>
               </div>
 
 

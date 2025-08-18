@@ -57,13 +57,18 @@ add_action('init', function () {
 });
 
 
+
 hodcode_add_custom_field("price", "product", "price(Final)");
 hodcode_add_custom_field("old_price", "product", "price(Before)");
+
+hodcode_add_custom_field("sensor_type", "product", "نوع سنسور");
+hodcode_add_custom_field("sensor_size", "product", "قطع سنسور");
+
 function hodcode_add_custom_field($fieldName, $postType, $title)
 {
   add_action('add_meta_boxes', function () use ($fieldName, $postType, $title) {
     add_meta_box(
-      $fieldName . '_bx`ox',
+      $fieldName . '_box',
       $title,
       function ($post) use ($fieldName) {
         $value = get_post_meta($post->ID, $fieldName, true);
